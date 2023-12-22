@@ -39,6 +39,12 @@ public class CropController {
         .collect(Collectors.toList());
   }
 
+  /**
+   * Gets crop by id.
+   *
+   * @param cropId the crop id
+   * @return the crop by id
+   */
   @GetMapping("/{cropId}")
   public CropDto getCropById(@PathVariable Long cropId) {
     Crop crop = this.cropService.getCropById(cropId);
