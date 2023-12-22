@@ -1,8 +1,10 @@
 package com.betrybe.agrix.services;
 
+import com.betrybe.agrix.exceptions.NotFoundException;
 import com.betrybe.agrix.models.entities.Fertilizer;
 import com.betrybe.agrix.models.repositories.FertilizerRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,15 @@ public class FertilizerService {
 
   public List<Fertilizer> getAllFertilizers() {
     return this.fertilizerRepository.findAll();
+  }
+
+  public Optional<Fertilizer> getFertilizerById(Long id) {
+    Optional<Fertilizer> optionalFertilizer = this.fertilizerRepository.findById(id);
+
+    if (optionalFertilizer.isEmpty()) {
+      throw new NotFoundException("Fertilizante não encontrado!");
+    }
+
+    return optionalFertilizer;
   }
 }
