@@ -2,6 +2,7 @@ package com.betrybe.agrix.controllers;
 
 import com.betrybe.agrix.controllers.dto.CropDto;
 import com.betrybe.agrix.models.entities.Crop;
+import com.betrybe.agrix.models.entities.Fertilizer;
 import com.betrybe.agrix.services.CropService;
 import java.time.LocalDate;
 import java.util.List;
@@ -87,5 +88,10 @@ public class CropController {
     this.cropService.setFertilizer(cropId, fertilizerId);
     return ResponseEntity.status(HttpStatus.CREATED)
         .body("Fertilizante e plantação associados com sucesso!");
+  }
+
+  @GetMapping("/{cropId}/fertilizers")
+  public List<Fertilizer> getFertilizersFromCrop(@PathVariable Long cropId) {
+    return this.cropService.getFertilizersFromCrop(cropId);
   }
 }

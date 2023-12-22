@@ -72,4 +72,19 @@ public class CropService {
     crop.getFertilizers().add(fertilizer);
     this.cropRepository.save(crop);
   }
+
+  /**
+   * Gets fertilizers from crop.
+   *
+   * @param cropId the crop id
+   * @return the fertilizers from crop
+   */
+  public List<Fertilizer> getFertilizersFromCrop(Long cropId) {
+    Optional<Crop> optionalCrop = this.cropRepository.findById(cropId);
+    if (optionalCrop.isEmpty()) {
+      throw new NotFoundException("Plantação não encontrada!");
+    }
+
+    return optionalCrop.get().getFertilizers();
+  }
 }
