@@ -29,6 +29,12 @@ public class FertilizerService {
     return this.fertilizerRepository.findAll();
   }
 
+  /**
+   * Gets fertilizer by id.
+   *
+   * @param id the id
+   * @return the fertilizer by id
+   */
   public Optional<Fertilizer> getFertilizerById(Long id) {
     Optional<Fertilizer> optionalFertilizer = this.fertilizerRepository.findById(id);
 
