@@ -1,10 +1,14 @@
 package com.betrybe.agrix.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 
 /**
  * The type Fertilizer.
@@ -20,9 +24,21 @@ public class Fertilizer {
   private String brand;
   private String composition;
 
+  @ManyToMany(mappedBy = "fertilizers", fetch = FetchType.EAGER)
+  @JsonIgnore
+  private List<Crop> crops;
+
   public Fertilizer() {
   }
 
+  /**
+   * Instantiates a new Fertilizer.
+   *
+   * @param id          the id
+   * @param name        the name
+   * @param brand       the brand
+   * @param composition the composition
+   */
   public Fertilizer(Long id, String name, String brand, String composition) {
     this.id = id;
     this.name = name;
