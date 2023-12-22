@@ -49,7 +49,8 @@ public class FarmController {
   public ResponseEntity<CropDto> setCrop(@PathVariable Long farmId, @RequestBody CropDto cropDto) {
     Crop newCrop = this.farmService.setCrop(farmId, cropDto.toCrop());
     CropDto responseCropDto = new CropDto(newCrop.getId(), newCrop.getName(),
-        newCrop.getPlantedArea(), newCrop.getFarm().getId());
+        newCrop.getPlantedArea(), newCrop.getFarm().getId(), newCrop.getPlantedDate(),
+        newCrop.getHarvestDate());
     return ResponseEntity.status(HttpStatus.CREATED).body(responseCropDto);
   }
 
@@ -83,7 +84,7 @@ public class FarmController {
     List<Crop> cropList = this.farmService.getAllCropsFromFarm(farmId);
     return cropList.stream()
         .map(crop -> new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(),
-            crop.getFarm().getId()))
+            crop.getFarm().getId(), crop.getPlantedDate(), crop.getHarvestDate()))
         .collect(Collectors.toList());
   }
 }

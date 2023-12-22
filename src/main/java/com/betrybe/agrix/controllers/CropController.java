@@ -35,13 +35,14 @@ public class CropController {
     List<Crop> cropList = this.cropService.getAllCrops();
     return cropList.stream()
         .map(crop -> new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(),
-            crop.getFarm().getId()))
+            crop.getFarm().getId(), crop.getPlantedDate(), crop.getHarvestDate()))
         .collect(Collectors.toList());
   }
 
   @GetMapping("/{cropId}")
   public CropDto getCropById(@PathVariable Long cropId) {
     Crop crop = this.cropService.getCropById(cropId);
-    return new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(), crop.getFarm().getId());
+    return new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(), crop.getFarm().getId(),
+        crop.getPlantedDate(), crop.getHarvestDate());
   }
 }
