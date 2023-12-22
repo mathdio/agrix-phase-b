@@ -3,6 +3,7 @@ package com.betrybe.agrix.services;
 import com.betrybe.agrix.exceptions.NotFoundException;
 import com.betrybe.agrix.models.entities.Crop;
 import com.betrybe.agrix.models.repositories.CropRepository;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,9 @@ public class CropService {
       throw new NotFoundException("Plantação não encontrada!");
     }
     return optionalCrop.get();
+  }
+
+  public List<Crop> getCropsAt(LocalDate start, LocalDate end) {
+    return this.cropRepository.findByHarvestDateBetween(start, end);
   }
 }
