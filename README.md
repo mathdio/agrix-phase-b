@@ -6,7 +6,10 @@ A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.co
 
 ## 💻 About this project
 
-This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops. The API has endpoints that allow the users to: register new farms, set crops to a farm, search farms by ID, search all farms and search for all crops from a farm. The available endpoints are listed in a section below. 
+This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops. 
+
+The API has endpoints that allow the users to: register new farms, set a crop to a farm, search farms by ID, search all farms, search for all crops from a farm, register a fertilizer, set a fertilizer to a crop, search for crops by harvest date, get all fertilizers, get a fertilizer by ID and get all fertilizers from a crop.
+The available endpoints are listed in a section below. 
 
 Some files were provided by [Trybe](https://www.betrybe.com), as the tables diagram in `/images` folder and the files in `ebytr.staff` package, for example. The `ebytr.staff` package was not implemented in `agrix` package yet, but it was used by Trybe to evaluate tests creation.
 
@@ -67,7 +70,7 @@ Services and endpoints:
 | Service | Method | Endpoint |
 |  :---:  | :----: | :------: |
 | Register a farm | POST | http://localhost:8080/farms |
-| Set a crop | POST | http://localhost:8080/{farmId}/crops |
+| Set a crop | POST | http://localhost:8080/farms/{farmId}/crops |
 | Create a fertilizer | POST | http://localhost:8080/fertilizers |
 | Set a fertilizer | POST | http://localhost:8080/crops/{cropId}/fertilizers/{fertilizerId} |
 | Get all farms | GET | http://localhost:8080/farms |
