@@ -22,8 +22,10 @@ farm. The available endpoints are listed in a section below.
 - Spring Actuator;
 - Spring Data JPA
 - RESTful API development;
-- Controller and service layers architecture;
+- Controller, service and persistence layers architecture;
 - Java Exceptions handling;
+- Unit tests;
+- Date fields handling;
 - App dockerization.
 
 ## 🏁 Getting started
@@ -90,3 +92,6 @@ Services and endpoints:
 
 > To set a crop to a farm, you need to pass the farm ID in the endpoint, as
 > in `http://localhost:8080/1/crops`
+
+## 🧪 Testing
+
