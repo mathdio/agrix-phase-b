@@ -76,7 +76,7 @@ Services and endpoints:
 | Get all farms | GET | http://localhost:8080/farms |
 | Get a farm by ID | GET | http://localhost:8080/farms/{farmId} |
 | Get all crops from a farm | GET | http://localhost:8080/farms/{farmId}/crops |
-| Search for crops by harvest date | GET | http://localhost:8080/crops/search |
+| Search for crops by harvest date | GET | http://localhost:8080/crops/search?start=yyyy-mm-dd&end=yyyy-mm-dd |
 | Get all fertilizers | GET | http://localhost:8080/fertilizers |
 | Get a fertilizer by ID | GET | http://localhost:8080/fertilizers/{id} |
 | Get all fertilizers from a crop | GET | http://localhost:8080/crops/{cropId}/fertilizers |
@@ -101,6 +101,9 @@ Services and endpoints:
 
 > To set a crop to a farm, you need to pass the farm ID in the endpoint, as
 > in `http://localhost:8080/1/crops`
+
+> To search crops by harvest date, two dates must be passed in the start and end parameters,
+> as in `http://localhost:8080/crops/search?start=2023-01-07&end=2024-01-10`
 
 ## 🧪 Testing
 In project root terminal, run:
