@@ -68,9 +68,16 @@ Services and endpoints:
 |  :---:  | :----: | :------: |
 | Register a farm | POST | http://localhost:8080/farms |
 | Set a crop | POST | http://localhost:8080/{farmId}/crops |
+| Create a fertilizer | POST | http://localhost:8080/fertilizers |
+| Set a fertilizer | POST | http://localhost:8080/crops/{cropId}/fertilizers/{fertilizerId} |
 | Get all farms | GET | http://localhost:8080/farms |
 | Get a farm by ID | GET | http://localhost:8080/farms/{farmId} |
 | Get all crops from a farm | GET | http://localhost:8080/farms/{farmId}/crops |
+| Search for crops by harvest date | GET | http://localhost:8080/crops/search |
+| Get all fertilizers | GET | http://localhost:8080/fertilizers |
+| Get a fertilizer by ID | GET | http://localhost:8080/fertilizers/{id} |
+| Get all fertilizers from a crop | GET | http://localhost:8080/crops/{cropId}/fertilizers |
+
 
 > Request body example to register a farm:
 > ```
