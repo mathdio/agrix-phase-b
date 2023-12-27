@@ -1,5 +1,3 @@
-# :construction: README em construção ! :construction:
-
 # 🧑‍🌾 Farms Manager API
 
 A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.com) Project.
@@ -99,11 +97,14 @@ Services and endpoints:
 > }
 > ```
 
-> To set a crop to a farm, you need to pass the farm ID in the endpoint, as
-> in `http://localhost:8080/1/crops`
+> To set a crop to a farm, you must pass the farm ID in the endpoint, as
+> in `http://localhost:8080/farms/1/crops`
 
 > To search crops by harvest date, two dates must be passed in the start and end parameters,
 > as in `http://localhost:8080/crops/search?start=2023-01-07&end=2024-01-10`
+
+> To set a fertilizer to a crop, you must pass the crop ID to which you want to associate the fertilizer and the fertilizer ID you want to associate,
+> as in `http://localhost:8080/crops/1/fertilizers/1`
 
 ## 🧪 Testing
 In project root terminal, run:
