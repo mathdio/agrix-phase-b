@@ -71,7 +71,7 @@ Services and endpoints:
 |  :---:  | :----: | :------: |
 | Register a farm | POST | http://localhost:8080/farms |
 | Set a crop | POST | http://localhost:8080/farms/{farmId}/crops |
-| Create a fertilizer | POST | http://localhost:8080/fertilizers |
+| Register a fertilizer | POST | http://localhost:8080/fertilizers |
 | Set a fertilizer | POST | http://localhost:8080/crops/{cropId}/fertilizers/{fertilizerId} |
 | Get all farms | GET | http://localhost:8080/farms |
 | Get a farm by ID | GET | http://localhost:8080/farms/{farmId} |
