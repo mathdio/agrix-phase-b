@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  application:
+    container_name: agrix-app
+    build: .
+    image: agrix-back-image
+    restart: always
+    ports:
+      - "8080:8080"
+    links:
+      - mysql:agrix-db
+    environment:
+      - DATABASE_HOST=agrix-db
+      - DATABASE_PORT=3306
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - SPRING_DATASOURCE_URL=jdbc:mysql://agrix-db:3306/agrixdb?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+
+  mysql:
+    container_name: agrix-db
+    image: mysql:8.0.32
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
