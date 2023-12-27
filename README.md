@@ -6,10 +6,9 @@ A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.co
 
 ## 💻 About this project
 
-This is a API built in Java and using Spring framework, with which the user can monitor and manager
-a system of farms and theirs crops. The API has endpoints that allow the users to: register new
-farms, set crops to a farm, search farms by ID, search all farms and search for all crops from a
-farm. The available endpoints are listed in a section below.
+This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops. The API has endpoints that allow the users to: register new farms, set crops to a farm, search farms by ID, search all farms and search for all crops from a farm. The available endpoints are listed in a section below. 
+
+Some files were provided by [Trybe](https://www.betrybe.com), as the tables diagram in `/images` folder and the files in `ebytr.staff` package, for example. The `ebytr.staff` package was not implemented in `agrix` package yet, but it was used by Trybe to evaluate tests creation.
 
 ## 🛠️ Built with
 
@@ -94,4 +93,11 @@ Services and endpoints:
 > in `http://localhost:8080/1/crops`
 
 ## 🧪 Testing
-
+In project root terminal, run:
+```
+mvn test
+```
+Or for execute only one test class, run:
+```
+mvn test -Dtest="TestClassName"
+```
